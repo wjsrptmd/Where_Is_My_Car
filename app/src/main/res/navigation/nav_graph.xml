@@ -3,7 +3,29 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/nav_graph"
-    app:startDestination="@id/FirstFragment">
+    app:startDestination="@id/FirstPage">
+
+    <fragment
+        android:id="@+id/FirstPage"
+        android:name="com.hintoki.where_is_my_car.FirstPage"
+        android:label="@string/first_page_label"
+        tools:layout="@layout/fragment_first_page">
+
+        <action
+            android:id="@+id/action_FirstPage_to_SecondPage"
+            app:destination="@id/SecondPage" />
+    </fragment>
+    <fragment
+        android:id="@+id/SecondPage"
+        android:name="com.hintoki.where_is_my_car.SecondPage"
+        android:label="@string/second_page_label"
+        tools:layout="@layout/fragment_second_page">
+
+        <action
+            android:id="@+id/action_SecondPage_to_FirstPage"
+            app:destination="@id/FirstPage" />
+    </fragment>
+
 
     <fragment
         android:id="@+id/FirstFragment"

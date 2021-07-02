@@ -11,11 +11,10 @@ import androidx.navigation.fragment.NavHostFragment;
 
 /**
  * A simple {@link Fragment} subclass.
- * Use the {@link SecondPage#newInstance} factory method to
+ * Use the {@link ThirdPage#newInstance} factory method to
  * create an instance of this fragment.
- *
  */
-public class SecondPage extends Fragment {
+public class ThirdPage extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
@@ -26,26 +25,26 @@ public class SecondPage extends Fragment {
     private String mParam1;
     private String mParam2;
 
+    public ThirdPage() {
+        // Required empty public constructor
+    }
+
     /**
      * Use this factory method to create a new instance of
      * this fragment using the provided parameters.
      *
      * @param param1 Parameter 1.
      * @param param2 Parameter 2.
-     * @return A new instance of fragment SecondPage.
+     * @return A new instance of fragment ThirdPage.
      */
     // TODO: Rename and change types and number of parameters
-    public static SecondPage newInstance(String param1, String param2) {
-        SecondPage fragment = new SecondPage();
+    public static ThirdPage newInstance(String param1, String param2) {
+        ThirdPage fragment = new ThirdPage();
         Bundle args = new Bundle();
         args.putString(ARG_PARAM1, param1);
         args.putString(ARG_PARAM2, param2);
         fragment.setArguments(args);
         return fragment;
-    }
-
-    public SecondPage() {
-        // Required empty public constructor
     }
 
     @Override
@@ -60,15 +59,14 @@ public class SecondPage extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+        View view = inflater.inflate(R.layout.fragment_third_page,container,false);
 
-        View view = inflater.inflate(R.layout.fragment_second_page,container,false);
-
-        Button prev_button = (Button)view.findViewById(R.id.prev_button);
-        prev_button.setOnClickListener(new View.OnClickListener() {
+        Button prev_btn = (Button)view.findViewById(R.id.prev_button);
+        prev_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(SecondPage.this)
-                        .navigate(R.id.move_to_FirstPage);
+                NavHostFragment.findNavController(ThirdPage.this)
+                        .navigate(R.id.move_to_SecondPage);
             }
         });
 

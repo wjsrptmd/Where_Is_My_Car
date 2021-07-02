@@ -12,8 +12,12 @@
         tools:layout="@layout/fragment_first_page">
 
         <action
-            android:id="@+id/action_FirstPage_to_SecondPage"
+            android:id="@+id/move_to_SecondPage"
             app:destination="@id/SecondPage" />
+
+        <action
+            android:id="@+id/move_to_ThirdPage"
+            app:destination="@id/ThirdPage" />
     </fragment>
     <fragment
         android:id="@+id/SecondPage"
@@ -22,29 +26,23 @@
         tools:layout="@layout/fragment_second_page">
 
         <action
-            android:id="@+id/action_SecondPage_to_FirstPage"
+            android:id="@+id/move_to_FirstPage"
             app:destination="@id/FirstPage" />
     </fragment>
-
-
     <fragment
-        android:id="@+id/FirstFragment"
-        android:name="com.hintoki.where_is_my_car.FirstFragment"
-        android:label="@string/first_fragment_label"
-        tools:layout="@layout/fragment_first">
+        android:id="@+id/ThirdPage"
+        android:name="com.hintoki.where_is_my_car.ThirdPage"
+        android:label="@string/third_page_label"
+        tools:layout="@layout/fragment_third_page">
 
         <action
-            android:id="@+id/action_FirstFragment_to_SecondFragment"
-            app:destination="@id/SecondFragment" />
-    </fragment>
-    <fragment
-        android:id="@+id/SecondFragment"
-        android:name="com.hintoki.where_is_my_car.SecondFragment"
-        android:label="@string/second_fragment_label"
-        tools:layout="@layout/fragment_second">
+            android:id="@+id/move_to_FirstPage"
+            app:destination="@id/FirstPage" />
 
         <action
-            android:id="@+id/action_SecondFragment_to_FirstFragment"
-            app:destination="@id/FirstFragment" />
+            android:id="@+id/move_to_SecondPage"
+            app:destination="@id/SecondPage" />
     </fragment>
+
+
 </navigation>

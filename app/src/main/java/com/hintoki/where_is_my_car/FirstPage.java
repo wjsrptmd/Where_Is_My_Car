@@ -65,14 +65,24 @@ public class FirstPage extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_first_page,container,false);
 
-        Button next_btn = (Button)view.findViewById(R.id.next_button);
-        next_btn.setOnClickListener(new View.OnClickListener() {
+        Button find_btn = (Button)view.findViewById(R.id.find_button);
+        find_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 NavHostFragment.findNavController(FirstPage.this)
-                        .navigate(R.id.action_FirstPage_to_SecondPage);
+                        .navigate(R.id.move_to_SecondPage);
             }
         });
+
+        Button history_btn = (Button)view.findViewById(R.id.history_button);
+        history_btn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                NavHostFragment.findNavController(FirstPage.this)
+                        .navigate(R.id.move_to_ThirdPage);
+            }
+        });
+
 
         return view;
     }

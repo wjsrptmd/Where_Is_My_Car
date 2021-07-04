@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -9,25 +10,26 @@
     <TextView
         android:id="@+id/text_header_car"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/text_height_dp"
+        android:textSize="@dimen/text_size_sp"
         android:gravity="center"
         android:text="@string/head_car"
         app:layout_constraintHorizontal_chainStyle="packed"
-        app:layout_constraintHorizontal_weight="0.1"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toLeftOf="@+id/text_car_name"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintHorizontal_bias="0.1"
+        app:layout_constraintVertical_bias="0.1"
         />
-<!--    app:layout_constraintVertical_bias="0.1"-->
 
     <TextView
         android:id="@+id/text_car_name"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/text_height_dp"
+        android:textSize="@dimen/text_size_sp"
         android:gravity="center"
-        android:text="@string/car"
+        android:text=""
         app:layout_constraintLeft_toRightOf="@+id/text_header_car"
         app:layout_constraintTop_toTopOf="@id/text_header_car"
         app:layout_constraintRight_toRightOf="parent"
@@ -36,43 +38,93 @@
     <TextView
         android:id="@+id/text_header_location"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/text_height_dp"
+        android:textSize="@dimen/text_size_sp"
         android:gravity="center"
         android:text="@string/head_location"
         app:layout_constraintLeft_toLeftOf="@id/text_header_car"
         app:layout_constraintTop_toBottomOf="@+id/text_header_car"
         />
 
+
     <TextView
         android:id="@+id/text_location"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_height="@dimen/text_height_dp"
+        android:textSize="@dimen/text_size_sp"
         android:gravity="center"
-        android:text="@string/location"
+        android:text=""
         app:layout_constraintLeft_toRightOf="@id/text_header_location"
         app:layout_constraintTop_toTopOf="@id/text_header_location"
         />
 
+    <TextView
+        android:id="@+id/text_header_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/text_height_dp"
+        android:textSize="@dimen/text_size_sp"
+        android:gravity="center"
+        android:text="@string/head_date_time"
+        app:layout_constraintLeft_toLeftOf="@id/text_header_car"
+        app:layout_constraintTop_toBottomOf="@+id/text_header_location"
+        />
+
+    <TextView
+        android:id="@+id/text_date_time"
+        android:layout_width="wrap_content"
+        android:layout_height="@dimen/text_height_dp"
+        android:textSize="@dimen/text_size_sp"
+        android:gravity="center"
+        android:text=""
+        app:layout_constraintLeft_toRightOf="@id/text_header_car"
+        app:layout_constraintTop_toTopOf="@id/text_header_date_time"
+        />
+
     <Button
         android:id="@+id/find_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/button1_width"
+        android:layout_height="@dimen/button1_height"
         android:text="@string/find_btn"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/text_location"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.4"
         />
 
     <Button
         android:id="@+id/history_button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
+        android:layout_width="@dimen/button1_width"
+        android:layout_height="@dimen/button1_height"
         android:text="@string/history_btn"
-        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/find_button"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintVertical_bias="0.7"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+    <Button
+        android:id="@+id/dummy_data_button"
+        android:layout_width="@dimen/button1_width"
+        android:layout_height="@dimen/button1_height"
+        android:text="Dummy Data"
+        app:layout_constraintTop_toBottomOf="@id/history_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.1"
+        />
+
+    <Button
+        android:id="@+id/clear_data_button"
+        android:layout_width="@dimen/button1_width"
+        android:layout_height="@dimen/button1_height"
+        android:text="Clear Data"
+        app:layout_constraintTop_toBottomOf="@id/dummy_data_button"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintVertical_bias="0.1"
         />
 </android.support.constraint.ConstraintLayout>

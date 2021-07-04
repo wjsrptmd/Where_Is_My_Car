@@ -19,6 +19,7 @@
             android:id="@+id/move_to_ThirdPage"
             app:destination="@id/ThirdPage" />
     </fragment>
+
     <fragment
         android:id="@+id/SecondPage"
         android:name="com.hintoki.where_is_my_car.SecondPage"
@@ -29,6 +30,7 @@
             android:id="@+id/move_to_FirstPage"
             app:destination="@id/FirstPage" />
     </fragment>
+
     <fragment
         android:id="@+id/ThirdPage"
         android:name="com.hintoki.where_is_my_car.ThirdPage"

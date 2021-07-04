@@ -13,25 +13,37 @@
     <string name="hello_second_page">두번째 페이지</string>
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
+    <string name="working_directory"></string>
     <string name="find_btn">위치 찾기</string>
     <string name="history_btn">기록 보기</string>
+    <string name="empty_history">주차 기록이 없습니다.</string>
 
-    <!--텍스트 높이 크기-->
-    <string name="text_width_dp">30dp</string>
+    <!--텍스트 박스 높이 크기-->
+    <dimen name="text_height_dp">30dp</dimen>
+
+    <!--텍스트 크기-->
+    <dimen name="text_size_sp">12sp</dimen>
 
     <!--버튼1 크기-->
-    <string name="button1_height">80dp</string>
-    <string name="button1_width">100dp</string>
+    <dimen name="button1_height">80dp</dimen>
+    <dimen name="button1_width">100dp</dimen>
 
     <!--버튼2 크기-->
-    <string name="button2_height">100dp</string>
-    <string name="button2_width">120dp</string>
+    <dimen name="button2_height">100dp</dimen>
+    <dimen name="button2_width">120dp</dimen>
 
+    <!--listView 간격 -->
+    <dimen name="listview_gap">10dp</dimen>
+
+    <!--listItem column 너비 -->
+    <dimen name="column1_width"></dimen>
 
     <string name="head_car">차량 이름 : </string>
     <string name="car">아반떼</string>
     <string name="head_location">위치 : </string>
     <string name="location">수원시 영통구 창룡대로 250 행복주택 102동 302호</string>
+    <string name="head_date_time">주차 시간 : </string>
+    <string name="date_time">2021-07-04 01:12:45</string>
 
 
 </resources>

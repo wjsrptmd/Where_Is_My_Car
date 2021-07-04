@@ -5,9 +5,12 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
+import android.widget.ListView;
+import android.widget.TextView;
 
 import androidx.navigation.fragment.NavHostFragment;
+
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,14 +64,17 @@ public class ThirdPage extends Fragment {
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_third_page,container,false);
 
-        Button prev_btn = (Button)view.findViewById(R.id.prev_button);
-        prev_btn.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(ThirdPage.this)
-                        .navigate(R.id.move_to_SecondPage);
-            }
-        });
+        ArrayList<ParkingInfo> list = ParkingInfoManager.GetHistory(getContext());
+        if(list.size() > 0) {
+            TextView empty_text = (TextView)view.findViewById(R.id.empty_text);
+            empty_text.setText("");
+
+            ListView listView = (ListView) view.findViewById(R.id.list_history);
+            ParkingListViewAdapter adapter =  new ParkingListViewAdapter();
+            adapter.SetList(list);
+            listView.setAdapter(adapter);
+
+        }
 
         return view;
     }

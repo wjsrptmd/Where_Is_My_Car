@@ -9,6 +9,9 @@ import android.widget.Button;
 
 import androidx.navigation.fragment.NavHostFragment;
 
+import com.naver.maps.map.MapView;
+import com.naver.maps.map.NaverMapSdk;
+
 /**
  * A simple {@link Fragment} subclass.
  * Use the {@link SecondPage#newInstance} factory method to
@@ -58,16 +61,8 @@ public class SecondPage extends Fragment {
                              Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.fragment_second_page,container,false);
-
-        Button prev_button = (Button)view.findViewById(R.id.prev_button);
-        prev_button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                NavHostFragment.findNavController(SecondPage.this)
-                        .navigate(R.id.move_to_FirstPage);
-            }
-        });
-
+        MapView mapView = view.findViewById(R.id.map_view);
+        mapView.onCreate(savedInstanceState);
         return view;
     }
 }

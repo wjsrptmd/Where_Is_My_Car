@@ -13,7 +13,12 @@
 
         <action
             android:id="@+id/move_to_SecondPage"
-            app:destination="@id/SecondPage" />
+            app:destination="@id/SecondPage" >
+            <argument
+                android:name="parkingInfo"
+                app:argType="string"
+                android:defaultValue="" />
+        </action>
 
         <action
             android:id="@+id/move_to_ThirdPage"

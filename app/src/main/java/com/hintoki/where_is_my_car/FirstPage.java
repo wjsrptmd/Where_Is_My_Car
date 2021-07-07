@@ -49,6 +49,19 @@ public class FirstPage extends Fragment {
         // Required empty public constructor
     }
 
+    private void SetParkingInfo(View view, ParkingInfo parkingInfo) {
+        if (parkingInfo != null) {
+            TextView car_name = view.findViewById(R.id.text_car_name);
+            car_name.setText(parkingInfo.car_name);
+
+            TextView location = view.findViewById(R.id.text_location);
+            location.setText(parkingInfo.location);
+
+            TextView date_time = (TextView) view.findViewById(R.id.text_date_time);
+            date_time.setText(parkingInfo.date_time);
+        }
+    }
+
     @Override
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -66,15 +79,24 @@ public class FirstPage extends Fragment {
 
         View view = inflater.inflate(R.layout.fragment_first_page,container,false);
 
+        // Input Data
+        ParkingInfo parkingInfo = ParkingInfoManager.GetLatestParkingInfo(getContext());
+        SetParkingInfo(view, parkingInfo);
+
         Button find_btn = (Button)view.findViewById(R.id.find_button);
+        TextView location = (TextView)view.findViewById(R.id.text_location);
+        String test = location.getText().toString();
         find_btn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                NavHostFragment.findNavController(FirstPage.this)
-                        .navigate(R.id.move_to_SecondPage);
+                Bundle args = new Bundle();
+                args.putString(ARG_PARAM1, location.getText().toString());
+//                NavHostFragment.findNavController(FirstPage.this)
+//                        .navigate(R.id.move_to_SecondPage, args);
+
+                IntentManager.IntentMapApp(getContext(), location.getText().toString(), "naver");
             }
         });
-
         Button history_btn = (Button)view.findViewById(R.id.history_button);
         history_btn.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -100,19 +122,6 @@ public class FirstPage extends Fragment {
                 ParkingInfoManager.ClearHistory(getContext());
             }
         });
-
-        // Input Data
-        ParkingInfo parkingInfo = ParkingInfoManager.GetLatestParkingInfo(getContext());
-        if (parkingInfo != null) {
-            TextView car_name = (TextView) view.findViewById(R.id.text_car_name);
-            car_name.setText(parkingInfo.car_name);
-
-            TextView location = (TextView) view.findViewById(R.id.text_location);
-            location.setText(parkingInfo.location);
-
-            TextView date_time = (TextView) view.findViewById(R.id.text_date_time);
-            date_time.setText(parkingInfo.date_time);
-        }
 
         return view;
     }

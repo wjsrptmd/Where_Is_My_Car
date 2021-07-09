@@ -8,22 +8,22 @@ public class SchemGenerator {
         if(type == "naver") {
             str = String.format("nmap://search?query=%s&appname=com.hintoki.where_is_my_car", location);
         } else if (type == "kakao") {
-            // TODO : kakao
+            str = String.format("kakaomap://search?q=%s&appname=com.hintoki.where_is_my_car", location);
         } else {
-            // TODO : google
+            str = String.format("geo:0,0?q=%s&appname=com.hintoki.where_is_my_car", location);
         }
         return Uri.parse(str);
     }
 
     public static Uri GetMarketScheme(String type) {
-        String str = "";
+        String pakage_name = "";
         if(type == "naver") {
-            str = "market://details?id=com.nhn.android.nmap";
+            pakage_name = "com.nhn.android.nmap";
         } else if (type == "kakao") {
-            // TODO : kakao
+            pakage_name = "net.daum.android.map";
         } else {
-            // TODO : google
+            pakage_name = "com.google.android.apps.maps";
         }
-        return Uri.parse(str);
+        return Uri.parse(String.format("market://details?id=%s", pakage_name));
     }
 }

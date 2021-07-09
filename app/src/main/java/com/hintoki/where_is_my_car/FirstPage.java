@@ -91,10 +91,8 @@ public class FirstPage extends Fragment {
             public void onClick(View v) {
                 Bundle args = new Bundle();
                 args.putString(ARG_PARAM1, location.getText().toString());
-//                NavHostFragment.findNavController(FirstPage.this)
-//                        .navigate(R.id.move_to_SecondPage, args);
-
-                IntentManager.IntentMapApp(getContext(), location.getText().toString(), "naver");
+                NavHostFragment.findNavController(FirstPage.this)
+                        .navigate(R.id.move_to_SecondPage, args);
             }
         });
         Button history_btn = (Button)view.findViewById(R.id.history_button);
@@ -120,6 +118,22 @@ public class FirstPage extends Fragment {
             @Override
             public void onClick(View v) {
                 ParkingInfoManager.ClearHistory(getContext());
+            }
+        });
+
+        Button test_map_naver = (Button)view.findViewById(R.id.open_map_naver);
+        test_map_naver.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentManager.IntentMapApp(getContext(), location.getText().toString(), "google");
+            }
+        });
+
+        Button test_map_kakao = (Button)view.findViewById(R.id.open_map_kakao);
+        test_map_kakao.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                IntentManager.IntentMapApp(getContext(), location.getText().toString(), "kakao");
             }
         });
 

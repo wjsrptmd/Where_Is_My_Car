@@ -3,8 +3,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.hintoki.where_is_my_car.MainActivity">
     <item
-        android:id="@+id/action_settings"
+        android:id="@+id/menu_settings"
         android:orderInCategory="100"
-        android:title="@string/action_settings"
+        android:title="@string/menu_settings"
         app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_history"
+        android:orderInCategory="100"
+        android:title="@string/menu_history"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_clean_history"
+        android:orderInCategory="100"
+        android:title="@string/menu_clean_history"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/menu_dummy_history"
+        android:orderInCategory="100"
+        android:title="@string/menu_dummy_history"
+        app:showAsAction="never" />
+
 </menu>

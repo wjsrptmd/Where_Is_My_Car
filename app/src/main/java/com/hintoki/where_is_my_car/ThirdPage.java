@@ -19,12 +19,9 @@ import java.util.ArrayList;
  */
 public class ThirdPage extends Fragment {
 
-    // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
-    // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
 
@@ -32,15 +29,6 @@ public class ThirdPage extends Fragment {
         // Required empty public constructor
     }
 
-    /**
-     * Use this factory method to create a new instance of
-     * this fragment using the provided parameters.
-     *
-     * @param param1 Parameter 1.
-     * @param param2 Parameter 2.
-     * @return A new instance of fragment ThirdPage.
-     */
-    // TODO: Rename and change types and number of parameters
     public static ThirdPage newInstance(String param1, String param2) {
         ThirdPage fragment = new ThirdPage();
         Bundle args = new Bundle();
@@ -63,18 +51,6 @@ public class ThirdPage extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         View view = inflater.inflate(R.layout.fragment_third_page,container,false);
-
-        ArrayList<ParkingInfo> list = ParkingInfoManager.GetHistory(getContext());
-        if(list.size() > 0) {
-            TextView empty_text = (TextView)view.findViewById(R.id.empty_text);
-            empty_text.setText("");
-
-            ListView listView = (ListView) view.findViewById(R.id.list_history);
-            ParkingListViewAdapter adapter =  new ParkingListViewAdapter();
-            adapter.SetList(list);
-            listView.setAdapter(adapter);
-
-        }
 
         return view;
     }

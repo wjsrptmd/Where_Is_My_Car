@@ -8,30 +8,10 @@
     tools:context=".ThirdPage">
 
     <TextView
-        android:id="@+id/empty_text"
-        android:layout_width="wrap_content"
-        android:layout_height="@dimen/text_height_dp"
-        android:textSize="@dimen/text_size_sp"
-        android:gravity="center"
-        android:text="@string/empty_history"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:text="세번째 페이지 입니다.">
 
-    <ListView
-        android:id="@+id/list_history"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:divider="@android:color/transparent"
-        android:dividerHeight="@dimen/listview_gap"
-        android:overScrollMode="never"
-        android:scrollbars="none"
-        app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        />
+    </TextView>
 
 </android.support.constraint.ConstraintLayout>

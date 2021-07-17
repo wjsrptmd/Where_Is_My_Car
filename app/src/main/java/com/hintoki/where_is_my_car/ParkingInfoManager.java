@@ -61,10 +61,12 @@ public class ParkingInfoManager {
 
             String date_time = "2021-07-04 10:11:22";
             String car_name = "Genesis";
-            String location = "경기 수원시 팔달구 덕영대로 924";
-            for (int i = 0; i < 100; i++) {
-                fw.write(date_time +"/" + car_name + "_" + Integer.toString(i) + "/" + location + "\n");
-            }
+            int i = 0;
+            fw.write(date_time +"/" + car_name + "_" + Integer.toString(i++) + "/" + "서울특별시 송파구 잠실동 올림픽로 240" + "\n");
+            fw.write(date_time +"/" + car_name + "_" + Integer.toString(i++) + "/" + "수원시 매산동" + "\n");
+            fw.write(date_time +"/" + car_name + "_" + Integer.toString(i++) + "/" + "경기도 용인시 처인구 포곡읍 에버랜드로 199 KR" + "\n");
+            fw.write(date_time +"/" + car_name + "_" + Integer.toString(i++) + "/" + "서울특별시 송파구 가락동 송이로15길 13" + "\n");
+            fw.write(date_time +"/" + car_name + "_" + Integer.toString(i++) + "/" + "경기도 안양시 만안구 박달동 박달로418번길 70" + "\n");
 
             fw.close();
             ret = true;

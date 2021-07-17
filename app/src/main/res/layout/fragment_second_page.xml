@@ -11,30 +11,43 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:orientation="vertical">
-        <TextView
-            android:id="@+id/textview_second"
+
+        <FrameLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_weight="5"
-            android:textAlignment="center"
-            android:textSize="@dimen/text_size_sp"
-            android:text="@string/hello_second_page"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            android:gravity="center_horizontal" />
+            android:layout_weight="1">
 
-        <com.naver.maps.map.MapView
-            android:id="@+id/map_view"
+            <TextView
+                android:id="@+id/empty_text"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/text_size_sp"
+                android:gravity="center"
+                android:text="@string/empty_history"
+                />
+
+            <ListView
+                android:id="@+id/list_history"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:divider="@android:color/transparent"
+                android:dividerHeight="@dimen/listview_gap"
+                android:overScrollMode="never"
+                android:scrollbars="none"
+                />
+
+        </FrameLayout>
+
+        <fragment
+            android:id="@+id/second_map"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_weight="1"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent">
-        </com.naver.maps.map.MapView>
+            android:name="com.hintoki.where_is_my_car.Map">
+        </fragment>
+
     </LinearLayout>
+
+
 
 </android.support.constraint.ConstraintLayout>
